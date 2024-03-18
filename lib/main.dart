@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:/flutterasign_one_mo_ahmed/postpage.dart';
+import 'package:wowo/postpage.dart';
 
 void main() {
   //is where the project starts executing

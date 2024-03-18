@@ -5,7 +5,7 @@ import 'dart:html';
 import 'dart:js_util';
 
 import 'package:flutter/material.dart';
-import 'package:talowadag/postClass.dart';
+import 'package:wowo/postClass.dart';
 import 'package:like_button/like_button.dart';
 import 'package:faker/faker.dart';
 
@@ -16,26 +16,7 @@ class Facebookpost extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 244, 246, 247),
-        appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Facebook',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 50,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              Icon(Icons.search),
-              Padding(padding: EdgeInsets.only(right: 1))
-            ],
-          ),
-          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-          elevation: 0,
-        ),
+        appBar: myappbar(),
         body: Column(
           children: [
             Container(
@@ -44,7 +25,7 @@ class Facebookpost extends StatelessWidget {
               margin: EdgeInsets.all(10.0),
               child: ListTile(
                 leading: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/person1.jpg'),
+                  backgroundImage: AssetImage('assets/images/free-images.jpg'),
                 ),
                 subtitle: TextField(
                   maxLength: 100,
@@ -127,7 +108,7 @@ class Facebookpost extends StatelessWidget {
                   subtitle: Column(
                     children: [
                       Text(person.post),
-                      Image.asset('assets/images/person1.jpg'),
+                      Image.asset('assets/images/person-4.png'),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
