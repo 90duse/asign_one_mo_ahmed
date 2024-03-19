@@ -43,4 +43,5 @@ final List<userpost> userinfo = List.generate(
         name: faker.person.name(),
         post: faker.lorem.sentences(5).toString(),
         reactions: Random().nextInt(200),
-        profile: Image.asset('assets/images/fail.png')));
+        profile: Image.network(
+            'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg')));

@@ -6,9 +6,30 @@ import 'dart:js_util';
 
 import 'package:flutter/material.dart';
 import 'package:wowo/myfunctions.dart';
+import 'package:shimmer/shimmer.dart';
 
-class Facebookpost extends StatelessWidget {
-  Facebookpost({super.key});
+class Facebookpost extends StatefulWidget {
+  const Facebookpost({super.key});
+
+  @override
+  State<Facebookpost> createState() => _FacebookpostState();
+}
+
+class _FacebookpostState extends State<Facebookpost> {
+  bool isLoaded = false;
+  @override
+  void initState() {
+    Future.delayed(
+      Duration(seconds: 3),
+      () {
+        setState(() {
+          isLoaded = true;
+        });
+      },
+    );
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +37,14 @@ class Facebookpost extends StatelessWidget {
       home: Scaffold(
         appBar: myappbar(),
         body: Column(
-          children: [createpost(), storysection(), Expanded(child: post())],
+          children: [createpost(), Expanded(child: post())],
         ),
       ),
     );
   }
 }
+
+//  Shimmer.fromColors(
+//           baseColor: const Color.fromARGB(255, 253, 245, 245),
+//           highlightColor: const Color.fromARGB(255, 91, 224, 95),
+//           direction: ShimmerDirection.ltr,

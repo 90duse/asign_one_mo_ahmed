@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:wowo/postClass.dart';
 import 'package:faker/faker.dart';
 
@@ -14,7 +15,7 @@ myappbar() {
           'Facebook',
           style: TextStyle(
             color: Colors.blue,
-            fontSize: 50,
+            fontSize: 30,
             fontWeight: FontWeight.w700,
           ),
         ),
@@ -32,123 +33,166 @@ createpost() {
     color: Colors.white,
     padding: EdgeInsets.all(2.0),
     margin: EdgeInsets.all(10.0),
-    child: ListTile(
-      leading: CircleAvatar(
-        backgroundImage: AssetImage('assets/images/profile.jpeg'),
-      ),
-      subtitle: TextField(
-        maxLength: 100,
-        decoration: InputDecoration(label: Text('What is your mind?')),
-      ),
-    ),
-  );
-}
-
-storysection() {
-  return Container(
-    color: Colors.white,
-    padding: EdgeInsets.all(1.0),
-    margin: EdgeInsets.only(bottom: 5.0),
-    //decoration: BoxDecoration(
-    //border: Border.all(color: Colors.black, width: 1.0)),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    child: Column(
       children: [
-        IconButton(
-          padding: EdgeInsets.all(20),
-          alignment: Alignment.center,
-          onPressed: null,
-          icon: Icon(
-            Icons.live_tv_outlined,
-            color: Colors.red,
+        ListTile(
+          leading: CircleAvatar(
+            backgroundImage: AssetImage('assets/images/profile.jpeg'),
+          ),
+          subtitle: TextField(
+            maxLength: 100,
+            decoration: InputDecoration(label: Text('What is your mind?')),
           ),
         ),
-        IconButton(
-          padding: EdgeInsets.all(20),
-          onPressed: null,
-          icon: Icon(
-            Icons.image,
-            color: Colors.lightGreen,
+        Container(
+          color: Colors.white,
+          //padding: EdgeInsets.all(1.0),
+          margin: EdgeInsets.only(bottom: 5.0),
+          //decoration: BoxDecoration(
+          //border: Border.all(color: Colors.black, width: 1.0)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(padding: EdgeInsets.all(2.0)),
+              TextButton.icon(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.videocam,
+                    color: Colors.red,
+                  ),
+                  label: Text('Live')),
+              TextButton.icon(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.photo_library,
+                    color: Colors.lightGreen,
+                  ),
+                  label: Text('Photo')),
+              TextButton.icon(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.video_camera_back,
+                    color: Color.fromARGB(255, 224, 127, 200),
+                  ),
+                  label: Text('Reels')),
+            ],
           ),
-        ),
-        IconButton(
-          padding: EdgeInsets.all(20),
-          onPressed: null,
-          icon: Icon(
-            Icons.video_call,
-            color: Colors.red,
-          ),
-        ),
+        )
       ],
     ),
   );
 }
 
-post() {
-  return ListView.separated(
-    itemCount: userinfo.length,
-    itemBuilder: (BuildContext context, int index) {
-      userpost person = userinfo[index];
-      return ListTile(
-        tileColor: Colors.white,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        'https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg')),
-                Padding(padding: EdgeInsets.only(right: 10.0)),
-                Column(
-                  children: [
-                    Text(person.name),
-                    Row(
-                      children: [
-                        Text('5 minute'),
-                        Padding(padding: EdgeInsets.only(right: 10.0)),
-                        Icon(Icons.public),
-                      ],
-                    )
-                  ],
-                ),
-              ],
-            ),
-            Icon(Icons.more_horiz)
-          ],
-        ),
-        subtitle: Column(
-          children: [
-            Text(person.post),
-            person.profile,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                LikeButton(
-                  likeCount: person.reactions,
-                  isLiked: false,
-                  likeCountPadding: EdgeInsets.all(10.0),
-                  likeCountAnimationDuration: Duration(seconds: 01),
-                ),
-                Row(
-                  children: [Icon(Icons.comment), Text('comments')],
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.share_rounded),
-                    Text('share'),
-                  ],
-                ),
-              ],
-            ),
-          ],
-        ),
+// storysection() {
+//   return Container(
+//     color: const Color.fromARGB(255, 248, 243, 245),
+//     padding: EdgeInsets.all(5),
+//     child: Row(
+//       mainAxisAlignment: MainAxisAlignment.spaceAround,
+//       children: [
+//         Container(
+//           width: 100,
+//           height: 60,
+//           child: Text('data'),
+//           decoration: BoxDecoration(
+//             shape: BoxShape.rectangle,
+//             color: Colors.red,
+//           ),
+//         ),
+//         Container(
+//           width: 100,
+//           height: 60,
+//           child: Text('data'),
+//           decoration: BoxDecoration(
+//             shape: BoxShape.circle,
+//             color: Colors.red,
+//           ),
+//         ),
+//         Container(
+//           width: 100,
+//           height: 60,
+//           child: Text('data'),
+//           decoration: BoxDecoration(
+//             shape: BoxShape.circle,
+//             color: Colors.red,
+//           ),
+//         )
+//       ],
+//     ),
+//   );
+// }
 
-        // trailing: Icon(Icons.more_horiz),
-      );
-    },
-    separatorBuilder: (context, index) => const Divider(
-      color: Colors.green,
+post() {
+  return Shimmer.fromColors(
+    baseColor: const Color.fromARGB(255, 253, 245, 245),
+    highlightColor: Color.fromARGB(255, 105, 105, 105),
+    direction: ShimmerDirection.ltr,
+    enabled: true,
+    child: ListView.separated(
+      itemCount: userinfo.length,
+      itemBuilder: (BuildContext context, int index) {
+        userpost person = userinfo[index];
+        return ListTile(
+          tileColor: Colors.white,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg')),
+                  Padding(padding: EdgeInsets.only(right: 10.0)),
+                  Column(
+                    children: [
+                      Text(person.name),
+                      Row(
+                        children: [
+                          Text('5 minute'),
+                          Padding(padding: EdgeInsets.only(right: 10.0)),
+                          Icon(Icons.public),
+                        ],
+                      )
+                    ],
+                  ),
+                ],
+              ),
+              Icon(Icons.more_horiz)
+            ],
+          ),
+          subtitle: Column(
+            children: [
+              Text(person.post),
+              person.profile,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  LikeButton(
+                    likeCount: person.reactions,
+                    isLiked: false,
+                    likeCountPadding: EdgeInsets.all(10.0),
+                    likeCountAnimationDuration: Duration(seconds: 01),
+                  ),
+                  Row(
+                    children: [Icon(Icons.comment), Text('comments')],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.share_rounded),
+                      Text('share'),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+
+          // trailing: Icon(Icons.more_horiz),
+        );
+      },
+      separatorBuilder: (context, index) => const Divider(
+        color: Colors.green,
+      ),
     ),
   );
 }
