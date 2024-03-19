@@ -20,7 +20,7 @@ class _FacebookpostState extends State<Facebookpost> {
   @override
   void initState() {
     Future.delayed(
-      Duration(seconds: 3),
+      Duration(seconds: 5),
       () {
         setState(() {
           isLoaded = true;
@@ -36,9 +36,18 @@ class _FacebookpostState extends State<Facebookpost> {
     return MaterialApp(
       home: Scaffold(
         appBar: myappbar(),
-        body: Column(
-          children: [createpost(), Expanded(child: post())],
-        ),
+        body: SafeArea(
+            child: !isLoaded
+                ? Shimmer.fromColors(
+                    baseColor: Color.fromARGB(255, 63, 62, 62),
+                    highlightColor: Color.fromARGB(255, 153, 147, 147),
+                    direction: ShimmerDirection.ltr,
+                    child: Column(
+                      children: [createpost(), Expanded(child: post())],
+                    ),
+                  )
+                : Column(
+                    children: <Widget>[createpost(), Expanded(child: post())])),
       ),
     );
   }
