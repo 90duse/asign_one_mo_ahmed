@@ -78,7 +78,7 @@ class phoneui extends StatelessWidget {
               borderRadius: BorderRadius.circular(85.0),
               child: Container(
                 margin: EdgeInsets.all(21.0),
-                height: 400,
+                height: 450,
                 width: double.infinity,
                 color: Color.fromARGB(255, 58, 58, 58),
                 padding: EdgeInsets.all(10),
