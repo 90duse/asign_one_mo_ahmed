@@ -20,7 +20,7 @@ class _FacebookpostState extends State<Facebookpost> {
   @override
   void initState() {
     Future.delayed(
-      Duration(seconds: 5),
+      Duration(seconds: 1),
       () {
         setState(() {
           isLoaded = true;
