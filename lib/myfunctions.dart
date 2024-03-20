@@ -37,7 +37,7 @@ createpost() {
       children: [
         ListTile(
           leading: CircleAvatar(
-            backgroundImage: AssetImage('assets/images/profile.jpeg'),
+            backgroundImage: AssetImage('assets/images/duse.jpeg'),
           ),
           subtitle: TextField(
             maxLength: 100,
@@ -135,8 +135,9 @@ post() {
             Row(
               children: [
                 CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        'https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg')),
+                  //backgroundImage: AssetImage('assets/images/duse.jpeg'),
+                  backgroundColor: Colors.purple,
+                ),
                 Padding(padding: EdgeInsets.only(right: 10.0)),
                 Column(
                   children: [
@@ -152,13 +153,20 @@ post() {
                 ),
               ],
             ),
-            Icon(Icons.more_horiz)
+            // Icon(Icons.more_horiz),
+            PopupMenuButton(
+                shadowColor: Colors.red,
+                itemBuilder: (BuildContext context) => [
+                      PopupMenuItem(child: Text('Save')),
+                      PopupMenuItem(child: Text('Edit')),
+                      PopupMenuItem(child: Text('Delete')),
+                    ])
           ],
         ),
         subtitle: Column(
           children: [
             Text(person.post),
-            person.profile,
+            person.postImage,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
