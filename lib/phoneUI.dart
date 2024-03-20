@@ -12,11 +12,11 @@ class phoneui extends StatelessWidget {
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+                end: Alignment.center,
                 colors: [
               Color.fromARGB(255, 0, 0, 0),
-              // Color.fromARGB(26, 81, 60, 100),
-              Colors.white54,
+              // Color.fromARGB(26, 116, 116, 116),
+              Color.fromARGB(149, 25, 5, 37),
             ])),
         child: Scaffold(
           backgroundColor: Colors.transparent,
@@ -29,14 +29,20 @@ class phoneui extends StatelessWidget {
                 subtitle: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.call_made_outlined,
-                      color: Colors.green,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 7.0),
+                      child: Icon(
+                        Icons.call_made_outlined,
+                        color: Colors.green,
+                      ),
                     ),
-                    Icon(
-                      Icons.call,
-                      color: Colors.white,
-                      size: 20.0,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 7.0),
+                      child: Icon(
+                        Icons.call,
+                        color: Colors.white,
+                        size: 20.0,
+                      ),
                     ),
                     Text(
                       '00:05',
