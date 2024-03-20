@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:wowo/phoneUI.dart';
+import 'package:wowo/postpage.dart';
 //import 'package:wowo/postpage.dart';
 
 void main() {
   //is where the project starts executing
-  runApp(phoneui());
+  runApp(Facebookpost());
 }
 
 class MyApp extends StatelessWidget {
