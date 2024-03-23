@@ -127,6 +127,8 @@ post() {
     itemCount: userinfo.length,
     itemBuilder: (BuildContext context, int index) {
       userpost person = userinfo[index];
+      String avatarprofile = profileimage[index];
+
       return ListTile(
         tileColor: Colors.white,
         title: Row(
@@ -135,20 +137,33 @@ post() {
             Row(
               children: [
                 CircleAvatar(
-                  //backgroundImage: person.profile as,
-                  child: person.profile,
-
+                  backgroundImage: AssetImage(avatarprofile),
                   backgroundColor: Colors.purple,
                 ),
                 Padding(padding: EdgeInsets.only(right: 10.0)),
                 Column(
                   children: [
-                    Text(person.name),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text('5 minute'),
+                        Text(person.name),
+                        Icon(
+                          Icons.verified_user,
+                          color: Colors.blue,
+                          size: 15,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(person.date.timeZoneName.toString()),
                         Padding(padding: EdgeInsets.only(right: 10.0)),
-                        Icon(Icons.public),
+                        Icon(
+                          Icons.public,
+                          color: const Color.fromARGB(255, 119, 119, 119),
+                          size: 20,
+                        ),
                       ],
                     )
                   ],
