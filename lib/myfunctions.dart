@@ -135,7 +135,9 @@ post() {
             Row(
               children: [
                 CircleAvatar(
-                  //backgroundImage: AssetImage('assets/images/duse.jpeg'),
+                  //backgroundImage: person.profile as,
+                  child: person.profile,
+
                   backgroundColor: Colors.purple,
                 ),
                 Padding(padding: EdgeInsets.only(right: 10.0)),
