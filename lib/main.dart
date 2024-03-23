@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(
+      home: const MyHomePage(
         title: 'Navigate the screens ',
       ),
     );
@@ -36,19 +36,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,16 +48,18 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Facebookpost()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Facebookpost()));
                 },
-                child: Text('Go to Facebook screen')),
+                child: const Text('Go to Facebook screen')),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => phoneui()));
+                      MaterialPageRoute(builder: (context) => const phoneui()));
                 },
-                child: Text('Go to Phone screen')),
+                child: const Text('Go to Phone screen')),
           ],
         ),
       ),

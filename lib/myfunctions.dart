@@ -2,9 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:wowo/postClass.dart';
-import 'package:faker/faker.dart';
 
 myappbar() {
   return AppBar(

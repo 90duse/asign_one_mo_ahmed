@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:io';
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:faker/faker.dart';
@@ -57,17 +55,3 @@ List<String> profileimage = [
   "assets/images/image5.jpeg",
   "assets/images/image4.jpeg"
 ];
-
-// var profiles = <String, String>{
-//   "image1": "assets/images/image6.jpg",
-//   "image2": "assets/images/duse.jpeg",
-//   "image3": "assets/images/image5.jpeg",
-//   "image4": "assets/images/image4.jpeg",
-// };
-
-// class Profiless {
-//   var image1 = "assets/images/image6.jpg";
-//   var image2 = "assets/images/duse.jpeg";
-//   var image3 = "assets/images/image5.jpeg";
-//   var image4 = "assets/images/image4.jpeg";
-// }
