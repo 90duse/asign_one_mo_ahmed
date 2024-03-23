@@ -66,6 +66,8 @@ flutter:
   assets:
      - assets/images/duse.jpeg
      - assets/images/image6.jpg
+     - assets/images/image5.jpeg
+     - assets/images/image4.jpeg
      
      
     
