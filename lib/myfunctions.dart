@@ -18,7 +18,7 @@ myappbar() {
           ),
         ),
         Icon(Icons.search),
-        Padding(padding: EdgeInsets.only(right: 1))
+        Padding(padding: EdgeInsets.only(right: 0.5))
       ],
     ),
     backgroundColor: const Color.fromARGB(255, 255, 255, 255),

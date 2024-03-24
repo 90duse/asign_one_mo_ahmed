@@ -51,8 +51,3 @@ class _FacebookpostState extends State<Facebookpost> {
     );
   }
 }
-
-//  Shimmer.fromColors(
-//           baseColor: const Color.fromARGB(255, 253, 245, 245),
-//           highlightColor: const Color.fromARGB(255, 91, 224, 95),
-//           direction: ShimmerDirection.ltr,

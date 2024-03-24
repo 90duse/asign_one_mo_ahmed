@@ -4,23 +4,21 @@ import 'package:wowo/postpage.dart';
 //import 'package:wowo/postpage.dart';
 
 void main() {
-  //is where the project starts executing
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(
-        title: 'Navigate the screens ',
+        title: 'Navigate Between the Screens ',
       ),
     );
   }
